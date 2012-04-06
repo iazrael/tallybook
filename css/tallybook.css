@@ -1,0 +1,311 @@
+@CHARSET "utf-8";
+
+/*************************/
+#container{
+	width: 345px;
+	/*width: 780px;*/
+	margin: 0 auto;
+	display: none;
+}
+#header{
+	font-family: "Trebuchet MS";
+	text-align: center;
+	font-size: 1.5em;
+}
+#header:before, #header:after{
+	/*为了清除header里的元素的margin对body的样式影响*/
+	content: "."; 
+    display: block; 
+    height: 0; 
+    visibility: hidden;
+}
+#header .version{
+	color:#999999;
+	font-size:12px;
+	font-style:italic;
+	padding-left:20px;
+}
+#footer{
+	text-align: center;
+	margin: 20px 0;
+	padding: 10px 0;
+	border-top: 1px solid #999;
+}
+#datepicker{
+	font-size: 1.5em;
+	/*width: 240px;*/
+	float: left;
+	position: relative;
+}
+#bill{
+	width: 530px;
+	float: right;
+	padding: 3px;
+	display: none;
+}
+/************列表 table************/
+#billTable {
+	width: 100%;
+}
+
+#billTable tr.header{
+	background: url("../images/list-bg.png") repeat-x scroll 50% 50% #5C9CCC;
+	height: 30px;
+	color: #fff;
+}
+#billTable th{
+	text-align: left;
+	font-weight: normal;
+}
+#billTable td,#billTable th{
+	padding: 2px 3px;
+	line-height: 2;
+}
+#billTable th.index{
+	width: 20px;
+}
+#billTable th.date{
+	width: 80px;
+}
+#billTable th.in-out{
+	width: 40px;
+}
+#billTable th.amount{
+	width: 60px;
+}
+#billTable th.type{
+	width: 80px;
+}
+#billTable th.remark{
+	
+}
+#billTable th.action{
+	width: 80px;
+}
+#billTbody tr.item:nth-child(even){
+	background-color: #E3F1FC;
+}
+#billTbody tr.item:hover{
+	background-color: #87B6D9;
+}
+#billTbody td.action a{
+	margin: 0 3px;
+}
+#billTbody tr.item td.action a{
+	color: #fff;
+}
+#billTbody tr.item td.action a:hover{
+	color: #990000;
+}
+#billTbody tr.item td.action div{
+	display: none;
+}
+#billTbody tr.item:hover td.action div{
+	display: inline-block;
+}
+
+#billTbody tr.empty{
+	text-align: center;
+}
+#billTbody tr.total{
+	background: #fff000;
+}
+
+#billTableLoading{
+	display: none;
+	text-align: center;
+}
+#paginationLoading{
+	float: right;
+	display: none;
+	margin-top:9px;
+}
+#dataLoading{
+	display: none;
+	z-index: 100001;
+}
+/**************项目表单********/
+#newAccountButton{
+	color: #ff0000;
+	text-decoration: none;
+}
+#newAccountButton:hover{
+	color: #990000;
+}
+#newAccountButton .account-add{
+	margin-top: 2px;
+}
+#accountForm{
+	padding: 5px 0;
+	display: none;
+}
+#accountForm fieldset div.row{
+	margin: 10px 0;
+}
+#accountForm fieldset label.label{
+	width: 80px;
+	text-align: right;
+	display: inline-block;
+}
+
+#accountType{
+	
+}
+#accountType label.column{
+	line-height: 50px;
+	vertical-align: top;
+}
+#accountType div.column{
+	display: inline-block;
+}
+#accountType div.column div.row{
+	margin: 5px 0;
+}
+#accountType select{
+	width: 120px;
+}
+#accountType select .child{
+	padding-left: 30px;
+}
+#accountType a{
+	margin: 0 5px;
+	text-decoration: none;
+}
+#accountType div.disable,#accountType div.disable a,#accountType div.disable a:hover{
+	color: #888;
+}
+#accountType div.disable a{
+    
+}
+#accountType div.disable span{
+	opacity: 0.5;
+    filter: gray;
+}
+#accountDate{
+	width: 120px;
+}
+#accountAmount{
+	width: 70px;
+}
+#accountRemark{
+	width: 200px;
+}
+
+#accountTypeForm{
+	padding: 5px;
+}
+#accountTypeForm fieldset div.row{
+	margin: 5px 0;
+}
+#accountTypeForm fieldset a{
+	margin: 0 5px;
+}
+
+.button{
+	height:16px;
+	width:16px;
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0 3px;
+	background: url(../images/sprites.png) 0 0 no-repeat;
+}
+.account-add{
+	background-position:0 0;
+}
+.account-edit{
+	background-position:0 -16px;
+}
+.account-del{
+	background-position:0 -32px;
+}
+
+#datepickerCustombtns{
+	display: none;
+}
+#currentMonth{
+    font-weight: normal;
+    margin-right: 0.5em;
+    opacity: 0.7;
+}
+/*******pagination*********/
+.pagination {
+    font-family:Helvetica;
+    height:24px;
+    padding:5px;
+    background:none;
+    display:none;
+    float:right;
+ }
+        
+.pagination a {
+    text-decoration: none;
+	border: solid 1px #A6C9E2;
+	color: #2E6E9E;
+    background:#fff;
+}
+.pagination a:hover{
+	border: solid 1px #007F7F;
+
+}
+.pagination span.ellipse {
+    font-family:verdana;
+}
+.pagination a, .pagination span {
+    display: block;
+    float: left;
+    padding: 0.3em 0.5em;
+    margin:0 4px;
+    padding:2px 7px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.pagination .current {
+    color: #fff;
+    background:#108AC6;
+    border: solid 1px #069;
+}
+
+.pagination .current.prev, .pagination .current.next{
+	color:#999;
+	border-color:#999;
+	background:#fff;
+}
+
+.pagination .current.prev, .pagination .current.next{
+	color:#999;
+	border-color:#999;
+	background:#fff;
+}
+
+/********插件使用的样式***********/
+label.error{
+	color: #c20000 !important;
+	text-align: left !important;
+	width: auto !important;
+}
+
+
+/********jquery ui 的微调***********/
+.ui-dialog{
+	font-size: 12px;
+}
+#ui-datepicker-div{
+	font-size: 0.9em;
+}
+.ui-datepicker-buttonpane{
+
+}
+.ui-datepicker-buttonpane-custombtns{
+	bottom: 0.5em;
+	position: absolute;
+	right: 0.5em;
+	z-index: 1;
+}
+.ui-datepicker-buttonpane-custombtns .ui-widget{
+	font-size: inherit;
+}
+.ui-datepicker-trigger{
+	vertical-align: middle;
+}

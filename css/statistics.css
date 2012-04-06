@@ -1,0 +1,116 @@
+@CHARSET "utf-8";
+
+/*************************/
+#container{
+	width: 780px;
+	margin: 0 auto;
+	display: none;
+}
+#header{
+	font-family: "Trebuchet MS";
+	text-align: center;
+	font-size: 1em;
+}
+#header:before, #header:after{
+    /*为了清除header里的元素的margin对body的样式影响*/
+    content: "."; 
+    display: block; 
+    height: 0; 
+    visibility: hidden;
+}
+#header .version{
+	color:#999999;
+	font-size:12px;
+	font-style:italic;
+	padding-left:20px;
+}
+#footer{
+	text-align: center;
+	margin: 20px 0;
+	padding: 10px 0;
+	border-top: 1px solid #999;
+}
+#dataLoading{
+    display: none;
+    z-index: 100001;
+}
+#tabsContainer{
+	/*min-height: 300px;*/
+}
+/*************************************/
+.chartcontainer{
+	 text-align: center;
+}
+.chart-control-panel{
+	margin: 10px;
+	padding: 5px 10px;
+}
+.chart-control-row{
+	margin: 5px 0;
+}
+.chart-tip{
+	text-align: center;
+	margin: 10px;
+}
+/************************************/
+.statis-sum-panel{
+	margin: 10px;
+    padding: 5px 10px;
+}
+.statis-sum-item{
+	padding: 0 3px;
+	color: #F00000;
+	font-style: italic;
+	text-shadow: 1px 2px 2px #AAA;
+}
+.statis-sum-separator {
+    color: #999999;
+    padding: 0 5px;
+}
+/************************************/
+.cate-container{
+	background: #D1EDFF;
+	padding: 8px;
+	position: relative;
+	float: left;
+	margin: 0 5px;
+	width: 300px;
+    min-height: 35px;
+}
+.cate-label{
+	float: left;
+}
+.candidate-cates{
+	display: none;
+}
+.cate-item{
+	background: #D1EDFF;
+    float: left;
+    height: 20px;
+    margin: 3px 5px;
+    padding: 2px 3px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 2px 2px 3px #4297D7;
+}
+#statisTypeLoading{
+	display: none;
+	float: left;
+	margin: 6px 5px;
+}
+#listAllCateButton{
+	float: left;
+	margin: 0 5px;
+}
+/********jquery ui 的调整***********/
+.ui-tabs-nav-custombtns{
+	top: 0.5em;
+    position: absolute;
+    right: 0.5em;
+    z-index: 1;
+    display: none;
+}
+.ui-tabs-nav-custombtns .ui-widget{
+	font-size: 12px;
+    font-weight: normal;
+}

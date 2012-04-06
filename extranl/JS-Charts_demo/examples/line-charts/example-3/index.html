@@ -1,0 +1,38 @@
+<html>
+<head>
+
+<title>JSChart</title>
+
+<script type="text/javascript" src="../../../sources/jscharts.js"></script>
+
+</head>
+<body>
+
+<div id="graph">Loading graph...</div>
+
+<script type="text/javascript">
+	var myData = new Array([1994, 0], [1995, 5000000], [1996, 10000000], [1997, 25000000], [1998, 35000000], [1999, 50000000], [2000, 70000000], [2001, 100000000], [2002, 160000000], [2003, 200000000], [2004, 250000000], [2005, 350000000], [2006, 450000000], [2007, 500000000]);
+	var myChart = new JSChart('graph', 'line');
+	myChart.setDataArray(myData);
+	myChart.setTitle('Internet domain survey host count');
+	myChart.setTitleColor('#8E8E8E');
+	myChart.setTitleFontSize(11);
+	myChart.setAxisNameX('');
+	myChart.setAxisNameY('');
+	myChart.setAxisColor('#BFD402');
+	myChart.setAxisValuesColor('#95A605');
+	myChart.setAxisPaddingLeft(100);
+	myChart.setAxisPaddingRight(120);
+	myChart.setAxisPaddingTop(50);
+	myChart.setAxisPaddingBottom(40);
+	myChart.setAxisValuesNumberY(6);
+	myChart.setGrid(false);
+	myChart.setLineColor('#00BAFD');
+	myChart.setLineWidth(3);
+	myChart.setSize(616, 321);
+	myChart.setBackgroundImage('chart_bg.jpg');
+	myChart.draw();
+</script>
+
+</body>
+</html>

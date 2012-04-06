@@ -1,0 +1,105 @@
+@CHARSET "utf-8";
+
+/*************************/
+#container{
+	width: 780px;
+	margin: 0 auto;
+	display: none;
+}
+#header{
+	font-family: "Trebuchet MS";
+	text-align: center;
+	font-size: 1em;
+}
+#header:before, #header:after{
+    /*为了清除header里的元素的margin对body的样式影响*/
+    content: "."; 
+    display: block; 
+    height: 0; 
+    visibility: hidden;
+}
+#header .version{
+	color:#999999;
+	font-size:12px;
+	font-style:italic;
+	padding-left:20px;
+}
+#footer{
+	text-align: center;
+	margin: 20px 0;
+	padding: 10px 0;
+	border-top: 1px solid #999;
+}
+
+/****************分类*********************/
+#outgoCateContainer{
+    float: right;
+}
+#saveCateSortLoading{
+	display: none;
+}
+#saveCateSortTip{
+	font-style: italic;
+}
+.category-control-panel{
+	padding: 5px 10px;
+}
+
+.cate-container{
+    background: #D1EDFF;
+    padding: 8px;
+    margin: 10px 0;
+    position: relative;
+    float: left;
+    width: 340px;
+    min-height: 35px;
+}
+.cate-item, .cate-item-highlight{
+	background: #D1EDFF;
+    height: 20px;
+    margin: 5px;
+    padding: 2px 8px;
+    cursor: pointer;
+    box-shadow: 2px 2px 3px #4297D7;
+    list-style: decimal inside;
+}
+.cate-item-highlight{
+	background: #FAD42E;
+	border: 1px solid #FCEFA1;
+	list-style: none;
+}
+
+.subcate-container .cate-item{
+    margin-left: 20px;
+}
+.subcate-container-item .subcate-container{
+	display: none;
+}
+.subcate-container-item{
+	height: auto;
+}
+.cate-item-actions{
+	float: right;
+}
+.cate-button{
+	height:16px;
+    width:16px;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 3px;
+    background: url(../images/sprites.png) 0 0 no-repeat;
+    text-indent: -999em;
+}
+.cate-edit{
+	background-position:0 -16px;
+}
+.cate-del{
+    background-position:0 -32px;
+}
+.cate-show-sub{
+	background-position:0 -80px;
+}
+.cate-hide-sub{
+    background-position:0 -64px;
+}
+

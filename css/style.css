@@ -1,0 +1,206 @@
+@CHARSET "utf-8";
+
+/**
+** 通用样式定义 
+**/
+html{
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-family: "Helvetica", "Arial",  "Verdana", "sans-serif";
+	font-size: 12px;
+	line-height: 1.5;
+	margin: 0;
+	padding: 0;
+}
+a {
+	color:#2080AF;
+}
+a:hover{
+	color:#990000;
+}
+form input[type="text"]{
+	vertical-align:middle;
+	padding:2px 3px;
+	margin: 0;
+}
+form input[type="radio"]{
+	vertical-align:middle;
+	margin: 0 3px 0 0;
+}
+ul, li{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+/*******通用类定义***********/
+.clearfix:after {
+	content: "."; 
+	display: block; 
+	height: 0; 
+	clear: both; 
+	visibility: hidden; 
+}  
+.clearfix{
+	zoom:1;
+}
+.border0{
+	border: none;
+}
+.border1{
+	border: 1px solid #C5DBEC;
+}
+.border2{
+	border: 1px solid #4297D7;
+}
+.border3{
+	border: 1px solid #A6C9E2;
+}
+.border4{
+	border: 1px solid #FAD42E;
+}
+.border5{
+	border: 1px solid #AA0000;
+}
+.border6{
+	border: 1px solid #1AAD03;
+}
+.border7{
+	border: 1px solid #AAAAAA;
+}
+.border8{
+    border: 1px solid #000;
+}
+.corner5{
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+.corner10{
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+
+.tip1{
+	color: red;
+    line-height: 2;
+}
+.tip2{
+	font-style: italic;
+	color: #666;
+	line-height: 2;
+}
+.hide{
+	display: none;
+}
+
+.loading1{
+	background: url("../images/loading1.gif") no-repeat;
+	display:inline-block;
+	height:16px;
+	margin:0 2px;
+	vertical-align:middle;
+	width:16px;
+}
+.loading2{
+	background: url("../images/loading2.gif") no-repeat;
+	display:inline-block;
+	height:64px;
+	margin:0 2px;
+	vertical-align:middle;
+	width:110px;
+}
+.bodyLoading{
+	background: url("../images/loading2.gif") no-repeat center center;
+	height: 450px;
+}
+/***** 插件使用样式 *****/
+.bubble-container{
+    position: absolute;
+    background: #fff;
+    display: none;
+}
+.bubble-arrow-pointer{
+    position: absolute; 
+    background: url(../images/arrow1.png) no-repeat;
+    display: block;
+    display:block;
+}
+.bubble-arrow-pointer-top,.bubble-arrow-pointer-bottom{
+    height:11px;
+    width:21px;
+}
+.bubble-arrow-pointer-left,.bubble-arrow-pointer-right{
+    height:21px;
+    width:11px;
+}
+.bubble-arrow-pointer-top{
+    background-position: 0 0;
+}
+.bubble-arrow-pointer-bottom{
+    background-position: 0 -12px;
+}
+.bubble-arrow-pointer-left{
+    background-position: 0 -24px;
+}
+.bubble-arrow-pointer-right{
+    background-position: -11px -24px;
+}
+
+/*************功能区***************
+*/
+.tally-menu-container{
+    position: absolute;
+    top: -35px;
+    left: 50%;
+    margin-left: -90px;
+    width: 180px;
+    height: 31px;
+    padding: 5px 0 0 0;
+    
+    -webkit-transition: top .5s linear;
+    -moz-transition: top .5s linear;
+    -o-transition: top .5s linear;
+    transition: top .5s linear;
+}
+.tally-menu-container:hover{
+    top: 0;
+
+}
+.tally-menu li {
+    float: left;
+}
+.tally-menu li a{
+    color: #369;
+    float: left;
+    font-family: Tahoma;
+    height: 26px;
+    line-height: 26px;
+    margin: 0 6px;
+    padding: 0 12px;
+    text-align: center;
+    text-decoration: none;
+    
+    box-shadow: 0 0 2px #999999, 1px 1px 2px #999999;
+    background-image:-moz-linear-gradient(0% 10% 270deg, #FFFFFF,#E5F0E0, #F4FFF0 100%);
+    background-image:-webkit-gradient(linear,0% 60%, 0% 40%, from(#E5F0E0), to(#FFFFFF));
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+.tally-menu li a:hover {
+    color: #05ACFF;
+    text-shadow: 1px 1px 3px #666666;
+}
+.tally-menu-trigger{
+	background: url(../images/sildedown.png) no-repeat;
+	width: 94px;
+	height: 11px;
+	position: absolute;
+	bottom: -10px;
+	left: 50%;
+	margin-left: -47px;
+	cursor: pointer;
+}
