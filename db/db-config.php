@@ -1,14 +1,12 @@
 <?php
 
-//define('DB_NAME', 'tally_book');
-//开发用数据库
-define('DB_NAME', 'tally_book_dev');
+define('DB_NAME', 'imatlas_tally_book');
 
 /** MySQL数据库用户名 */
 define('DB_USER', 'root');
 
 /** MySQL数据库密码 */
-define('DB_PASSWORD', '123');
+define('DB_PASSWORD', '');
 
 /** MySQL主机名 */
 define('DB_HOST', 'localhost');

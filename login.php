@@ -5,12 +5,19 @@
 		
 		$uname = escape_string($_POST['uname']);
 		$upwd = escape_string($_POST['upwd']);
+		$ip = $_SERVER["REMOTE_ADDR"];
 		$info = '';
 		if($uname && $upwd){
-			$queryString = "SELECT * FROM user WHERE uid='$uname' AND pwd='$upwd'";
-			if($tbdb->getfirst($queryString)){
+			$pwdMd5 = md5($upwd);
+			$queryString = "SELECT * FROM user WHERE uname='$uname' AND pwd='$pwdMd5'";
+			$user = $tbdb->getfirst($queryString);
+			if($user){
+
+      		$queryString = "UPDATE user SET lastLoginTime=now(), lastLoginIp='$ip' WHERE uname='$uname'";
+      		$tbdb->update($queryString);
 				session_start();
-				$_SESSION['logininfo']='3.141592654';
+				$_SESSION['uid'] = $user[uid];
+				$_SESSION['username'] = $uname;
 				header("HTTP/1.1 303 To Index");
 				header("Location: ./");
 				exit();

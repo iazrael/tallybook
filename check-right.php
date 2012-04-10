@@ -1,10 +1,7 @@
 <?php
-if($_IS_NEED_LOGIN){
 	session_start();
-	$login = $_SESSION['logininfo'];
-	if(!$_IS_NEED_LOGIN || (isset($login) && $login='3.141592654')){
-		
-	}else{
+	$uid = $_SESSION['uid'];
+	if(!isset($uid) ){
 		require_once('JSON.php');
 		require_once('consts.php');
 		header('Content-Type: application/json; charset=UTF-8');
@@ -15,5 +12,4 @@ if($_IS_NEED_LOGIN){
 		print($json->encode($result));
 		exit();
 	}
-}
 ?>
