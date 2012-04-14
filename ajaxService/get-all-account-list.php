@@ -8,20 +8,21 @@
 	header('Content-Type: application/json; charset=UTF-8');
 	$json = new Services_JSON();
 	$result = array();
+	$uid = $_SESSION['uid'];
 	
 	$year = escape_string($_POST['year']);
 	$month = escape_string($_POST['month']);
 	if(is_numeric($year) && is_numeric($month)){
 		$startMonth = date('Y-m-d', mktime(0, 0, 0, $month, 1, $year));
 		$endMonth = date('Y-m-d', mktime(0, 0, 0, $month + 1, 0, $year));
-		$queryString = "SELECT c.id	FROM account c,category t WHERE t.id = c.categoryId AND c.addTime BETWEEN '$startMonth' AND '$endMonth'";
+		$queryString = "SELECT c.id	FROM bill c,category t WHERE t.id = c.categoryId AND c.uid=$uid AND c.occurredTime BETWEEN '$startMonth' AND '$endMonth'";
 		//查询总数
 		$totalCount = $tbdb->getcount($queryString);
 		$records = array();
 		if($totalCount){//没有符合条件的记录时，减少一次数据库查询
-			$queryString = "SELECT c.id as id, amount, categoryId, t.name as categoryName, remark, addTime, c.type as accountType
-				FROM account c,category t WHERE t.id = c.categoryId AND c.addTime BETWEEN '$startMonth' AND '$endMonth'
-				ORDER BY c.type DESC, addTime ASC";
+			$queryString = "SELECT c.id as id, amount, categoryId, t.name as categoryName, remark, occurredTime, c.type as accountType
+				FROM bill c,category t WHERE t.id = c.categoryId AND c.uid=$uid AND c.occurredTime BETWEEN '$startMonth' AND '$endMonth'
+				ORDER BY c.type DESC, occurredTime ASC";
 			$qresult = $tbdb->query($queryString);
 			while($row=$tbdb->getarray($qresult)){
 				$records[] = array(
@@ -30,7 +31,7 @@
 						categoryId=>$row[categoryId],
 						categoryName=>$row[categoryName],
 						remark=>$row[remark],
-						addTime=>$row[addTime],
+						occurredTime=>$row[occurredTime],
 						accountType=>$row[accountType]
 					);
 			}

@@ -9,8 +9,9 @@
 	$json = new Services_JSON();
 	$result = array();
 	$records = array();
+	$uid = $_SESSION['uid'];
 	$queryString = "SELECT SUM(amount) AS amount, type
-	            FROM account a 
+	            FROM bill a WHERE uid=$uid
 	            GROUP BY type";
 	$qresult = $tbdb->query($queryString);
 	while($row=$tbdb->getarray($qresult)){

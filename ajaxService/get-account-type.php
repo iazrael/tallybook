@@ -5,11 +5,12 @@
 	
 	header('Content-Type: application/json; charset=UTF-8');
 	$json = new Services_JSON();
-	
-	$inTypeQueryString = 'SELECT * FROM category c WHERE type=1 AND parentId=0 ORDER BY c.index DESC';
-	$inTypeQueryString2 = 'SELECT * FROM category c WHERE type=1 AND parentId!=0 ORDER BY c.index DESC';
-	$outTypeQueryString = 'SELECT * FROM category c WHERE type=0 AND parentId=0 ORDER BY c.index DESC';
-	$outTypeQueryString2 = 'SELECT * FROM category c WHERE type=0 AND parentId!=0 ORDER BY c.index DESC';
+	$uid = $_SESSION['uid'];
+
+	$inTypeQueryString = "SELECT * FROM category c WHERE type=1 AND uid=$uid AND parentId=0 ORDER BY c.index DESC";
+	$inTypeQueryString2 = "SELECT * FROM category c WHERE type=1 AND uid=$uid AND parentId!=0 ORDER BY c.index DESC";
+	$outTypeQueryString = "SELECT * FROM category c WHERE type=0 AND uid=$uid AND parentId=0 ORDER BY c.index DESC";
+	$outTypeQueryString2 = "SELECT * FROM category c WHERE type=0 AND uid=$uid AND parentId!=0 ORDER BY c.index DESC";
 	
 	$result = array();
 	$typeArr = array();

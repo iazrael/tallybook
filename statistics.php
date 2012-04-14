@@ -54,7 +54,7 @@
 	       <div id="chartcontainer-pie" class="chartcontainer"></div>
 	    </div>
 	</div>
-	<div id="footer" class="hide">Copyright &copy; 2011 <a href="http://www.imatlas.com">imatlas.com</a> | Designed by <a href="http://www.imatlas.com">Atlas</a></div>
+	<div id="footer" class="hide">Copyright &copy; 2012 <a href="http://www.imatlas.com">imatlas.com</a> | Designed by <a href="http://www.imatlas.com">Atlas</a></div>
 	<div id="dataLoading" class="loading2"></div>
 	<div id="bubbleTip"></div>
 	
@@ -71,9 +71,19 @@
 
 </div>
 
-	<script type="text/javascript" src="js/jquery.min.js"></script>
-	<script type="text/javascript" src="js/jquery.ui.min.js"></script>
-	<script type="text/javascript" src="js/jquery.jqplot.min.js"></script>
-	<script type="text/javascript" src="js/statistics.all.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery.ui.min.js"></script>
+	<script src="js/jquery.jqplot.min.js"></script>
+
+	<script src="js/jqplot.logAxisRenderer.js" ></script>
+	<script src="js/jqplot.barRenderer.js" ></script>
+	<script src="js/jqplot.categoryAxisRenderer.js" ></script>
+	<script src="js/jqplot.pieRenderer.js" ></script>
+	<script src="js/jqplot.highlighter.js" ></script>
+	<script src="js/jqplot.pointLabels.js" ></script>
+	<script src="js/jquery.center.js" ></script>
+	<script src="js/common.js" ></script>
+	<script src="js/statistics.js" ></script>
+
 </body>
 </html>

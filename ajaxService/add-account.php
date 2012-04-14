@@ -8,6 +8,7 @@
 	header('Content-Type: application/json; charset=UTF-8');
 	$json = new Services_JSON();
 	$result = array();
+	$uid = $_SESSION['uid'];
 	
 	$date = escape_string($_POST['date']);
 	$amount = escape_string($_POST['amount']);
@@ -17,8 +18,8 @@
 	
 	if(is_numeric($amount) && is_numeric($type) && is_numeric($typeValue) && preg_match('/\d{4}-\d{2}-\d{2}/',$date)){
 
-		$sqlString = "INSERT INTO account(amount,addTime,categoryId,remark,type,createTime,updateTime) 
-			VALUES($amount,'$date',$typeValue,'$remark',$type,now(),now())";
+		$sqlString = "INSERT INTO bill(amount,occurredTime,categoryId,remark,type,createTime,updateTime,uid) 
+			VALUES($amount,'$date',$typeValue,'$remark',$type,now(),now(), $uid)";
 		if($tbdb->insert($sqlString)){
 			$result[success] = 1;
 			$result[date] = $date;

@@ -165,7 +165,7 @@ $(function(){
 				        trInner = '<td class="index">'
 				                + (r + 1)
 				                + '.</td><td class="date">'
-				                + record.addTime
+				                + record.occurredTime
 				                + '</td><td class="in-out">'
 				                + (record.accountType == 1 ? '收入' : '支出')
 				                + '</td><td class="amount">'
@@ -417,7 +417,7 @@ $(function(){
                     $accountInTypeRadio.attr('checked','checked');
                 }
                 $targetSelect.html('<option selected="selected" value="'+record.categoryId+'">'+record.categoryName+'</option>');
-                $accountDate.val(record.addTime);
+                $accountDate.val(record.occurredTime);
                 $accountAmount.val(Number.format(record.amount, '#.00'));
                 $accountRemark.val(record.remark);
                 $accountId.val(record.id);
@@ -439,9 +439,9 @@ $(function(){
                 var record = data.record;
                 var categoryName = accountTypeStorage.findById(record.categoryId);
                 var $tr = $('#account-item-'+record.id);
-				// if($datepicker.datepicker('getDate').format(CONST.DATE_FORMAT) == record.addTime){
+				// if($datepicker.datepicker('getDate').format(CONST.DATE_FORMAT) == record.occurredTime){
 					$tr.attr('atype',record.accountType);
-					$tr.children('.date').text(record.addTime);
+					$tr.children('.date').text(record.occurredTime);
 					$tr.children('.in-out').text((~~record.accountType ? '收入' : '支出'));
 					$tr.children('.amount').text((~~record.accountType ? '＋' : '－') + Number.format(record.amount, '#.00'));
 					$tr.children('.type').text(categoryName);
@@ -466,6 +466,7 @@ $(function(){
             $billTbody.empty();
             $billTableLoading.show();
             $paginationLoading.hide();
+            $pagination.hide();
             ajaxInteraction.loadAllAccountList(currentYearMonth[0], currentYearMonth[1], observer.onMonthAccountListLoad);
         },
         onShowByMonthButtonMouseEnter: function(){
@@ -512,7 +513,7 @@ $(function(){
 				        trInner = '<td class="index">'
 				                + (r + 1)
 				                + '.</td><td class="date">'
-				                + record.addTime
+				                + record.occurredTime
 				                + '</td><td class="in-out">'
 				                + (record.accountType == 1 ? '收入' : '支出')
 				                + '</td><td class="amount">'

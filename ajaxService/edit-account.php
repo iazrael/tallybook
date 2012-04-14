@@ -15,10 +15,11 @@
 	$type = escape_string($_POST['type']);
 	$typeValue = escape_string($_POST['typeValue']);
 	$id = escape_string($_POST['id']);
+	$uid = $_SESSION['uid'];
 	
 	if(is_numeric($id) && is_numeric($amount) && is_numeric($typeValue) && preg_match('/\d{4}-\d{2}-\d{2}/',$date)){
 		
-		$sqlString = "UPDATE account SET amount=$amount,addTime='$date',categoryId=$typeValue,remark='$remark', updateTime=now(),type=$type WHERE id=$id";
+		$sqlString = "UPDATE bill SET amount=$amount,occurredTime='$date',categoryId=$typeValue,remark='$remark', updateTime=now(),type=$type WHERE id=$id AND uid=$uid";
 		if($tbdb->update($sqlString)){
 			$record = array(
 				id=>$id,

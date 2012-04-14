@@ -41,7 +41,7 @@
 		<fieldset>
 			<legend>Login</legend>
 			<p><lable>Username: </lable><input name="uname" type="text"></p>
-			<p><lable>Password: </lable><input name="upwd" type="text"></p>
+			<p><lable>Password: </lable><input name="upwd" type="password"></p>
 			<p style="text-align: right;"><input name="submit" type="submit" value="Submit"></p>
 			<p style="text-align: center;color: red;"><?php echo $info;?></p>
 		</fieldset>

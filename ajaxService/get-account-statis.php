@@ -8,7 +8,8 @@
 	header('Content-Type: application/json; charset=UTF-8');
 	$json = new Services_JSON();
 	$result = array();
-	
+	$uid = $_SESSION['uid'];
+
 	$startYear = escape_string($_POST['startYear']);
 	$endYear = escape_string($_POST['endYear']);
 	$startMonth = escape_string($_POST['startMonth']);
@@ -25,9 +26,9 @@
 	        print($json->encode($result));
         }else{
 	        $records = array();
-	        $queryString = "SELECT SUM(amount) AS amount, SUBSTR(addTime, 1, 7) AS month
-	            FROM account a WHERE type = 0 AND addTime BETWEEN '$start' AND '$end'
-	            GROUP BY month ORDER BY addTime";
+	        $queryString = "SELECT SUM(amount) AS amount, SUBSTR(occurredTime, 1, 7) AS month
+	            FROM bill a WHERE type = 0 AND uid=$uid AND occurredTime BETWEEN '$start' AND '$end'
+	            GROUP BY month ORDER BY occurredTime";
 	        $qresult = $tbdb->query($queryString);
 	        while($row=$tbdb->getarray($qresult)){
 	            $records['out'][] = array(
@@ -35,9 +36,9 @@
 	                    0 + $row[amount]
 	                );
 	        }
-	        $queryString = "SELECT SUM(amount) AS amount, SUBSTR(addTime, 1, 7) AS month
-	            FROM account a WHERE type = 1 AND addTime BETWEEN '$start' AND '$end'
-	            GROUP BY month ORDER BY addTime";
+	        $queryString = "SELECT SUM(amount) AS amount, SUBSTR(occurredTime, 1, 7) AS month
+	            FROM bill a WHERE type = 1 AND uid=$uid AND occurredTime BETWEEN '$start' AND '$end'
+	            GROUP BY month ORDER BY occurredTime";
 	        $qresult = $tbdb->query($queryString);
 	        while($row=$tbdb->getarray($qresult)){
 	            $records['in'][] = array(

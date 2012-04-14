@@ -1,5 +1,4 @@
 <?php
-if($_IS_NEED_LOGIN){
 	session_start();
 	$uid = $_SESSION['uid'];
 	if(!isset($uid)){
@@ -7,5 +6,4 @@ if($_IS_NEED_LOGIN){
 		header("Location: login.php");
 		exit();
 	}
-}
 ?>

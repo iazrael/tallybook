@@ -12,15 +12,15 @@
 	$type = escape_string($_POST['type']);
 	$name = escape_string($_POST['name']);
 	$parent = escape_string($_POST['parent']);
-
+	$uid = $_SESSION['uid'];
 	
 	if(is_numeric($parent) && strlen($name) < 200){
 		if($parent > 0){
-			$insertString = "INSERT INTO category(name,parentId,type,createTime,updateTime) 
-				VALUES('$name',$parent,$type,now(),now())";
+			$insertString = "INSERT INTO category(name,parentId,type,createTime,updateTime,uid) 
+				VALUES('$name',$parent,$type,now(),now(), $uid)";
 		}else{
-			$insertString = "INSERT INTO category(name,type,createTime,updateTime) 
-				VALUES('$name',$type,now(),now())";
+			$insertString = "INSERT INTO category(name,type,createTime,updateTime, uid) 
+				VALUES('$name',$type,now(),now(), $uid)";
 		}
 		
 		if($tbdb->insert($insertString)){

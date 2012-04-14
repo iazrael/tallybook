@@ -93,9 +93,17 @@
 
 <div id="bubbleTip"></div>
 
-	<script type="text/javascript" src="js/jquery.min.js"></script>
-	<script type="text/javascript" src="js/jquery.ui.min.js"></script>
-	<script type="text/javascript" src="js/jquery.plugin.js"></script>
-	<script type="text/javascript" src="js/tallybook.all.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery.ui.min.js"></script>
+
+	<script src="js/jquery.datepicker.extend.js"></script>
+	<script src="js/jquery.form.js"></script>
+	<script src="js/jquery.validate.js"></script>	
+	<script src="js/jquery.pagination.js"></script>
+	<script src="js/jquery.center.js"></script>
+	<script src="js/jquery.localization.js"></script>
+
+	<script src="js/common.js"></script>
+	<script src="js/tallybook.js"></script>
 </body>
 </html>

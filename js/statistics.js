@@ -35,7 +35,7 @@ $(function(){
         ;
     
     var CONST = {
-        YEARS: [2010, 2011],
+        YEARS: [2010, 2012],
         MONTHS: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
         CHART_PREFIX: 'chartcontainer-',
         GET_IO_TYPE_URL: 'ajaxService/get-account-type.php',

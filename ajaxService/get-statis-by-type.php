@@ -8,6 +8,7 @@
 	header('Content-Type: application/json; charset=UTF-8');
 	$json = new Services_JSON();
 	$result = array();
+	$uid = $_SESSION['uid'];
 	
 	$cates = escape_string($_POST['cate']);
 	$cates = $json->decode($cates);
@@ -30,12 +31,12 @@
         }else{
 	    	$records = array();
 	        foreach($cates as $c){
-	            $queryString = "SELECT SUM(a.amount) AS amount, SUBSTR(a.addTime, 1, 7) AS month, c.name AS cate
-	                FROM account a, category c WHERE a.categoryId = c.id AND (a.categoryId = $c OR c.parentId = $c ) AND addTime BETWEEN '$start' AND '$end'
-	                GROUP BY month ORDER BY a.addTime";
+	            $queryString = "SELECT SUM(a.amount) AS amount, SUBSTR(a.occurredTime, 1, 7) AS month, c.name AS cate
+	                FROM bill a, category c WHERE a.categoryId = c.id AND a.uid=$uid AND (a.categoryId = $c OR c.parentId = $c ) AND occurredTime BETWEEN '$start' AND '$end'
+	                GROUP BY month ORDER BY a.occurredTime";
 	            $qresult = $tbdb->query($queryString);
 	            while($row=$tbdb->getarray($qresult)){
-	            	$queryString = "SELECT c.name AS cate FROM category c WHERE c.id = $c";
+	            	$queryString = "SELECT c.name AS cate FROM category c WHERE c.id = $c AND c.uid=$uid ";
 	            	$tresult = $tbdb->getfirst($queryString);
 	                $records[$tresult[cate]][] = array(
 	                        $row[month],

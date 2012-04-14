@@ -298,7 +298,7 @@ label.error{
 
 }
 .ui-datepicker-buttonpane-custombtns{
-	bottom: 0.5em;
+	bottom: 0.3em;
 	position: absolute;
 	right: 0.5em;
 	z-index: 1;

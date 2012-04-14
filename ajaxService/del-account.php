@@ -8,7 +8,7 @@
 	header('Content-Type: application/json; charset=UTF-8');
 	$json = new Services_JSON();
 	$result = array();
-	
+	$uid = $_SESSION['uid'];
 	$id = escape_string($_POST['id']);
 	$type = escape_string($_POST['type']);
 	if(!$_IS_RECORD_DELETABLE){
@@ -21,7 +21,7 @@
         print($json->encode($result));
 	}else if(is_numeric($id) && is_numeric($type)){
 		
-		$deleteString = "DELETE FROM account WHERE id = $id";
+		$deleteString = "DELETE FROM bill WHERE id = $id AND uid = $uid";
 		if($tbdb->delete($deleteString)){
 			$result[success] = 1;
 			$result[id] = $id;
