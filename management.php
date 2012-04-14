@@ -7,7 +7,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title>My Tally Management</title>
-	<link rel="stylesheet" href="css/jquery.ui.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="http://static.imatlas.com/jquery/jquery.ui.1.8.5.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="css/management.css" type="text/css" media="screen" />
 </head>
@@ -47,12 +47,13 @@
     </div>
 
 </div>
-	<script type="text/javascript" src="js/az.core.js"></script>
-	<script type="text/javascript" src="js/az.json.js"></script>
-	<script type="text/javascript" src="js/jquery.js"></script>
-	<script type="text/javascript" src="js/jquery.ui.js"></script>
-	<script type="text/javascript" src="js/jquery.center.js"></script>
-	<script type="text/javascript" src="js/common.js"></script>
-	<script type="text/javascript" src="js/management.js"></script>
+    <script src="http://static.imatlas.com/jquery/jquery-1.6.4.js"></script>
+    <script src="http://static.imatlas.com/jquery/jquery.ui.1.8.5.min.js"></script>
+
+	<script output="js/management.all.js" src="js/az.core.js"></script>
+	<script output="js/management.all.js" src="js/az.json.js"></script>
+	<script output="js/management.all.js" src="js/jquery.center.js"></script>
+	<script output="js/management.all.js" src="js/common.js"></script>
+	<script output="js/management.all.js" src="js/management.js"></script>
 </body>
 </html>

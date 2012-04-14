@@ -131,7 +131,7 @@
         // True to bring the series of the highlighted point to the front
         // of other series.
         this.bringSeriesToFront = false;
-        this._tooltipElem;
+        this._tooltipElem = null;
         this.isHighlighting = false;
 
         $.extend(true, this, options);

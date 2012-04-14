@@ -702,7 +702,7 @@ $(function(){
         trigger: $accountInTypeRadio,
         enable: function(){
             $accountInTypeDiv.removeClass('disable');
-            $accountInTypeSelect.attr('disabled','');
+            $accountInTypeSelect.removeAttr('disabled');
 	        $newAccountInTypeButton.bind('click',{type:'in'},observer.onNewAccountTypeButtonClick);
         },
         disable: function(){
@@ -716,7 +716,7 @@ $(function(){
         trigger: $accountOutTypeRadio,
         enable: function(){
             $accountOutTypeDiv.removeClass('disable');
-            $accountOutTypeSelect.attr('disabled','');
+            $accountOutTypeSelect.removeAttr('disabled');
             $newAccountOutTypeButton.bind('click',{type:'out'},observer.onNewAccountTypeButtonClick);
         },
         disable: function(){
@@ -736,7 +736,7 @@ $(function(){
             $newAccountInTypeButton.hide();
         },
         disable: function(){
-            $accountInTypeSelect.attr('disabled','');
+            $accountInTypeSelect.removeAttr('disabled');
             $accountInTypeLoading.hide();
             $newAccountInTypeButton.show();
         }
@@ -749,7 +749,7 @@ $(function(){
             $newAccountOutTypeButton.hide();
         },
         disable: function(){
-            $accountOutTypeSelect.attr('disabled','');
+            $accountOutTypeSelect.removeAttr('disabled');
             $accountOutTypeLoading.hide();
             $newAccountOutTypeButton.show();
         }

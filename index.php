@@ -7,7 +7,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title>My Tally Book</title>
-	<link rel="stylesheet" href="css/jquery.ui.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="http://static.imatlas.com/jquery/jquery.ui.1.8.5.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="css/tallybook.css" type="text/css" media="screen" />
 </head>
@@ -93,17 +93,16 @@
 
 <div id="bubbleTip"></div>
 
-	<script src="js/jquery.min.js"></script>
-	<script src="js/jquery.ui.min.js"></script>
+	<script src="http://static.imatlas.com/jquery/jquery-1.6.4.js"></script>
+	<script src="http://static.imatlas.com/jquery/jquery.ui.1.8.5.min.js"></script>
 
-	<script src="js/jquery.datepicker.extend.js"></script>
-	<script src="js/jquery.form.js"></script>
-	<script src="js/jquery.validate.js"></script>	
-	<script src="js/jquery.pagination.js"></script>
-	<script src="js/jquery.center.js"></script>
-	<script src="js/jquery.localization.js"></script>
-
-	<script src="js/common.js"></script>
-	<script src="js/tallybook.js"></script>
+	<script output="js/tallybook.all.js" src="js/jquery.datepicker.extend.js"></script>
+	<script output="js/tallybook.all.js" src="js/jquery.form.js"></script>
+	<script output="js/tallybook.all.js" src="js/jquery.validate.js"></script>	
+	<script output="js/tallybook.all.js" src="js/jquery.pagination.js"></script>
+	<script output="js/tallybook.all.js" src="js/jquery.center.js"></script>
+	<script output="js/tallybook.all.js" src="js/jquery.localization.js"></script>
+	<script output="js/tallybook.all.js" src="js/common.js"></script>
+	<script output="js/tallybook.all.js" src="js/tallybook.js"></script>
 </body>
 </html>

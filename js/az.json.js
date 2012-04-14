@@ -154,7 +154,6 @@
     test, toJSON, toString, valueOf
 */
 
-"use strict";
 
 // Create a JSON object only if one does not already exist. We create the
 // methods in a closure to avoid creating global variables.
@@ -173,8 +172,8 @@ if (!this.JSON) {
         // Format integers to have at least two digits.
         return n < 10 ? '0' + n : n;
     }
-	// if (typeof Date.prototype.toJSON !== 'function') {
-    if (typeof Date.prototype.toJSON !== 'function' && false) {
+	if (typeof Date.prototype.toJSON !== 'function') {
+    // if (typeof Date.prototype.toJSON !== 'function' && false) {
 		/** 
 		 * @ignore
 		 */

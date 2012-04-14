@@ -7,7 +7,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title>My Tally Statistics</title>
-	<link rel="stylesheet" href="css/jquery.ui.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="http://static.imatlas.com/jquery/jquery.ui.1.8.5.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="css/jquery.jqplot.min.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="css/statistics.css" type="text/css" media="screen" />
@@ -71,19 +71,19 @@
 
 </div>
 
-	<script src="js/jquery.min.js"></script>
-	<script src="js/jquery.ui.min.js"></script>
+	<script src="http://static.imatlas.com/jquery/jquery-1.6.4.js"></script>
+	<script src="http://static.imatlas.com/jquery/jquery.ui.1.8.5.min.js"></script>
 	<script src="js/jquery.jqplot.min.js"></script>
 
-	<script src="js/jqplot.logAxisRenderer.js" ></script>
-	<script src="js/jqplot.barRenderer.js" ></script>
-	<script src="js/jqplot.categoryAxisRenderer.js" ></script>
-	<script src="js/jqplot.pieRenderer.js" ></script>
-	<script src="js/jqplot.highlighter.js" ></script>
-	<script src="js/jqplot.pointLabels.js" ></script>
-	<script src="js/jquery.center.js" ></script>
-	<script src="js/common.js" ></script>
-	<script src="js/statistics.js" ></script>
+	<script output="js/statistics.all.js" src="js/jqplot.logAxisRenderer.js" ></script>
+	<script output="js/statistics.all.js" src="js/jqplot.barRenderer.js" ></script>
+	<script output="js/statistics.all.js" src="js/jqplot.categoryAxisRenderer.js" ></script>
+	<script output="js/statistics.all.js" src="js/jqplot.pieRenderer.js" ></script>
+	<script output="js/statistics.all.js" src="js/jqplot.highlighter.js" ></script>
+	<script output="js/statistics.all.js" src="js/jqplot.pointLabels.js" ></script>
+	<script output="js/statistics.all.js" src="js/jquery.center.js" ></script>
+	<script output="js/statistics.all.js" src="js/common.js" ></script>
+	<script output="js/statistics.all.js" src="js/statistics.js" ></script>
 
 </body>
 </html>
